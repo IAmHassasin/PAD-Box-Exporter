@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pad-box-export"
+version = "0.1.0"
+description = "Export owned PAD monsters from Monster Book screen recordings"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = [
+    "opencv-python>=4.8.0",
+    "numpy>=1.24.0",
+    "Pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+ocr = ["easyocr>=1.7.0", "ocrmac>=1.0.0"]
+dev = ["pytest>=7.4.0", "easyocr>=1.7.0", "ocrmac>=1.0.0"]
+
+[project.scripts]
+pad-box-export = "pad_box_export.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pad_box_export*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

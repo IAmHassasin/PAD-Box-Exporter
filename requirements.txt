@@ -1,0 +1,13 @@
+# PAD Box Export CLI — Python 3.11+
+
+opencv-python>=4.8.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# OCR — install at least one:
+# macOS (recommended): pip install ocrmac
+ocrmac>=1.0.0; sys_platform == "darwin"
+easyocr>=1.7.0
+
+# Development
+pytest>=7.4.0
